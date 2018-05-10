@@ -39,6 +39,12 @@ export class Repository<Entity extends ObjectLiteral> {
      */
     readonly queryRunner?: QueryRunner;
 
+    constructor(manager: EntityManager, metadata: EntityMetadata, queryRunner?: QueryRunner) {
+        this.manager = manager;
+        this.metadata = metadata;
+        this.queryRunner = queryRunner;
+    }
+
     // -------------------------------------------------------------------------
     // Public Methods
     // -------------------------------------------------------------------------
